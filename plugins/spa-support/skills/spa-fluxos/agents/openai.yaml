@@ -1,0 +1,4 @@
+interface:
+  display_name: "SPA Fluxos"
+  short_description: "Configurar passos, atores e regras pelo navegador"
+  default_prompt: "Use $spa-fluxos para configurar um passo no SPA pela interface, conferindo atores, regras e dependências."

@@ -1,0 +1,12 @@
+{
+  "name": "spa-support-marketplace",
+  "description": "Skill de suporte a fluxos SPA pelo navegador",
+  "owner": { "name": "EvandroSilvaPinto" },
+  "plugins": [
+    {
+      "name": "spa-support",
+      "source": "./plugins/spa-support",
+      "description": "Passos, atores, distribuição, regras e validação pela interface do SPA"
+    }
+  ]
+}

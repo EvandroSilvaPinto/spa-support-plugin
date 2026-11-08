@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "spa-support",
+  "version": "0.2.0",
+  "description": "Configuração assistida de fluxos SPA pela interface: passos, atores, atributos, regras e dependências.",
+  "author": { "name": "EvandroSilvaPinto", "url": "https://github.com/EvandroSilvaPinto" },
+  "homepage": "https://github.com/EvandroSilvaPinto/spa-support-plugin#readme",
+  "repository": "https://github.com/EvandroSilvaPinto/spa-support-plugin",
+  "license": "MIT",
+  "keywords": ["spa", "workflows", "suporte", "skills", "browser"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SPA Support",
+        "shortDescription": "Configurar fluxos pela interface do SPA",
+        "longDescription": "Skill de suporte para explicar, criar, editar e adaptar passos, atores, atributos e regras do SPA usando a sessão autorizada do navegador. Sem banco de dados ou servidor MCP obrigatório.",
+        "developerName": "EvandroSilvaPinto",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "defaultPrompt": ["Use a skill spa-fluxos para analisar o fluxo aberto no SPA, sem alterar configurações até eu definir a tarefa."]
+      }
+    }
+  }
+}

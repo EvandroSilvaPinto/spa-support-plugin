@@ -1,0 +1,12 @@
+{
+  "name": "spa-support-marketplace",
+  "interface": { "displayName": "SPA Support" },
+  "plugins": [
+    {
+      "name": "spa-support",
+      "source": { "source": "local", "path": "./plugins/spa-support" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

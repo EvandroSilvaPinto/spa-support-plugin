@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "mode": "demo",
+  "procedures": [
+    {
+      "procedure_id": "demo-service-status",
+      "title": "Consulta fictícia do status de um serviço fictício",
+      "description": "Exemplo demonstrativo. Não corresponde a um procedimento real e não consulta nenhum sistema.",
+      "fictitious": true,
+      "read_only": true,
+      "steps": [
+        "Identificar o exemplo como fictício e informar que o sistema real não está configurado.",
+        "Ler o resultado fixo da demonstração, sem realizar consultas externas.",
+        "Apresentar o resultado como simulado, sem efeitos externos."
+      ]
+    }
+  ]
+}

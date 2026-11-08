@@ -1,0 +1,11 @@
+{
+  "name": "spa-support-marketplace",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Validação do pacote de distribuição SPA Support; não é necessário npm para instalar o plugin.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": { "node": ">=24.15.0 <25" }
+}
