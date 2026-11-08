@@ -118,3 +118,14 @@ codex plugin add spa-support@spa-support-marketplace
 Reabra a sessão após atualizar. Não é necessário alterar manualmente permissões, arquivos de login ou configurações globais para usar a skill.
 
 Licença [MIT](LICENSE). Projeto independente; não é um plugin oficial da Coreplan, OpenAI ou Anthropic.
+
+## Consultas por nome ou ID
+
+| Pedido | Skill |
+| --- | --- |
+| Qual é o ID do fluxo pelo nome? | `spa-fluxo-por-nome` |
+| Como se chama o fluxo com este ID ou código FLU? | `spa-fluxo-por-id` |
+| Qual é o ID deste passo dentro do meu fluxo? | `spa-passo-por-nome` |
+| Como se chama o passo com este ID ou código STP? | `spa-passo-por-id` |
+
+A resposta inclui o nome oficial, o ID e o link da ficha consultada. Quando vários nomes correspondem à busca, a skill apresenta as opções.

@@ -1,6 +1,6 @@
 # Compatibilidade de distribuição
 
-Versão do plugin: 0.2.0. Verificação: 08/11/2026.
+Versão do plugin: 0.3.0. Verificação: 08/11/2026.
 
 | Verificação | Alcance |
 |---|---|

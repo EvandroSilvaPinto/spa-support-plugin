@@ -24,7 +24,7 @@ test('both marketplaces resolve to the same plugin with matching identities', as
   const portable = await json('plugins/spa-support/plugin.json');
   const claude = await json('plugins/spa-support/.claude-plugin/plugin.json');
   assert.equal(portable.name, 'spa-support');
-  assert.equal(portable.version, '0.2.0');
+  assert.equal(portable.version, '0.3.0');
   assert.equal(claude.name, portable.name);
   assert.equal(claude.version, portable.version);
   const codexMarket = await json('.agents/plugins/marketplace.json');
@@ -42,7 +42,7 @@ test('both marketplaces resolve to the same plugin with matching identities', as
 });
 
 test('all packaged skill reference links resolve within the plugin', async () => {
-  const skill = resolve(pluginRoot, 'skills/spa-fluxos');
+  const skill = resolve(pluginRoot, 'skills');
   const files = await allFiles(skill);
   assert.ok(files.some(f => f.endsWith(`${sep}SKILL.md`)));
   for (const path of files) {
