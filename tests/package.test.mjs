@@ -24,7 +24,7 @@ test('both marketplaces resolve to the same plugin with matching identities', as
   const portable = await json('plugins/spa-support/plugin.json');
   const claude = await json('plugins/spa-support/.claude-plugin/plugin.json');
   assert.equal(portable.name, 'spa-support');
-  assert.equal(portable.version, '0.3.0');
+  assert.equal(portable.version, '0.3.1');
   assert.equal(claude.name, portable.name);
   assert.equal(claude.version, portable.version);
   const codexMarket = await json('.agents/plugins/marketplace.json');
@@ -39,6 +39,19 @@ test('both marketplaces resolve to the same plugin with matching identities', as
   }
   assert.equal(codexMarket.plugins[0].policy.installation, 'AVAILABLE');
   assert.ok(claudeMarket.owner.name);
+});
+
+test('all five published skills have a matching frontmatter name', async () => {
+  const expected = ['spa-fluxo-por-id', 'spa-fluxo-por-nome', 'spa-fluxos', 'spa-passo-por-id', 'spa-passo-por-nome'];
+  const base = resolve(pluginRoot, 'skills');
+  const entries = await readdir(base, { withFileTypes: true });
+  assert.deepEqual(entries.filter(entry => entry.isDirectory()).map(entry => entry.name).sort(), expected);
+  for (const name of expected) {
+    const source = await readFile(resolve(base, name, 'SKILL.md'), 'utf8');
+    const header = source.split(/\r?\n---\r?\n/, 1)[0];
+    assert.ok(header.startsWith('---'));
+    assert.equal(header.match(/^name: (.+)$/m)?.[1], name);
+  }
 });
 
 test('all packaged skill reference links resolve within the plugin', async () => {

@@ -9,3 +9,7 @@ O navegador precisa estar conectado ao assistente e autenticado com a conta do s
 Os exemplos são fictícios. A profundidade da cópia nativa e os efeitos de salvar no SPA não foram testados durante a publicação. O modelador pode persistir ações imediatamente; altere apenas no escopo do pedido.
 
 Código, instalação e compatibilidade: [repositório SPA Support](https://github.com/EvandroSilvaPinto/spa-support-plugin).
+
+No Codex, confira as cinco skills no seletor de skills ($). No Claude Code, procure os comandos com o prefixo /spa-support:. Para testar uma consulta, use $spa-support:spa-fluxo-por-id no Codex ou /spa-support:spa-fluxo-por-id no Claude Code e informe um código FLU conhecido.
+
+As consultas disponíveis são spa-fluxo-por-nome, spa-fluxo-por-id, spa-passo-por-nome e spa-passo-por-id.
