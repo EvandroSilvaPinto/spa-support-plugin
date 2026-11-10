@@ -1,6 +1,6 @@
 # Compatibilidade de distribuição
 
-Versão do plugin: 0.3.1. Verificação: 08/11/2026.
+Versão do plugin: 0.4.0. Verificação do pacote: 10/11/2026.
 
 | Verificação | Alcance |
 |---|---|
@@ -25,3 +25,5 @@ Os clientes podem exigir nova sessão depois da instalação. O teste de instala
 Este repositório é uma distribuição por GitHub. Não foi submetido aos catálogos públicos de OpenAI ou Anthropic.
 
 Em 10/11/2026, em uma sessão autenticada do Chrome no Codex (SPA v84.3.3), foram conferidos o nome e o código de um fluxo e de um passo. O catálogo vinculava o nome à ficha do fluxo. Na tabela filtrada por nome, o link do passo também apareceu em referências de outras linhas. Para reproduzir, consulte um fluxo e um passo conhecidos por nome e depois por ID, comparando os links e os códigos nas fichas. A reprodução pelo Claude Code continua pendente.
+
+A skill spa-script foi incluída na verificação do pacote. A execução e o salvamento pelo formulário ainda requerem validação funcional.
