@@ -1,6 +1,6 @@
 {
   "name": "spa-support",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Configuração assistida de fluxos SPA pela interface: passos, atores, atributos, regras e dependências.",
   "author": { "name": "EvandroSilvaPinto", "url": "https://github.com/EvandroSilvaPinto" },
   "homepage": "https://github.com/EvandroSilvaPinto/spa-support-plugin#readme",

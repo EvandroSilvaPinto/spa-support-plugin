@@ -1,0 +1,4 @@
+interface:
+  display_name: "SPA pessoa por People"
+  short_description: "Buscar por People (ID da pessoa) e confirmar a pessoa"
+  default_prompt: "Use $spa-pessoa-por-people para localizar uma pessoa no SPA pelo People (ID da pessoa) e retornar nome, People e ID do usuário."

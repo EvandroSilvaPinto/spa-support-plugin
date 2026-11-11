@@ -1,6 +1,6 @@
 # SPA Support
 
-Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com nove skills para configuração de fluxos, consultas por nome ou ID, movimentação de processos, responsável original, scripts e relatórios. Compatível com o empacotamento do Codex e do Claude Code.
+Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com doze skills para configuração de fluxos, consultas por nome ou ID, movimentação de processos, responsável original, scripts e relatórios. Compatível com o empacotamento do Codex e do Claude Code.
 
 Não exige banco, Metabase, chave de API nem servidor MCP próprio. Os comandos usam sempre o SPA já aberto no navegador e sua sessão existente. As skills obtêm procuradoria, órgão e ambiente diretamente da aba aberta, sem pedir esses dados ou sua confirmação ao usuário.
 
@@ -24,6 +24,18 @@ No Codex, digite `$spa-support:` seguido do nome da skill. No Claude Code, use `
 | Como se chama o passo com este ID ou código STP? | `spa-passo-por-id` |
 
 A resposta inclui o nome oficial, o ID e o link da ficha consultada. Quando vários nomes correspondem à busca, a skill apresenta as opções.
+
+### Consultas de pessoas — versão 0.6.0
+
+| Pedido | Skill |
+| --- | --- |
+| Localize a pessoa pelo nome completo ou parcial. | `spa-pessoa-por-nome` |
+| Localize a pessoa pelo People (ID da pessoa). | `spa-pessoa-por-people` |
+| Localize a pessoa pelo ID do usuário vinculado. | `spa-pessoa-por-id` |
+
+As três consultas retornam nome completo, **People (ID da pessoa)**, **ID do usuário** e o link da ficha verificada. People identifica o cadastro da pessoa; o ID do usuário identifica o cadastro de usuário vinculado e é confirmado separadamente. Valores indisponíveis são indicados como não confirmados; ausência de vínculo só é informada quando verificada na interface.
+
+Exemplos no Codex: `$spa-support:spa-pessoa-por-nome` seguido do nome, `$spa-support:spa-pessoa-por-people` seguido do People ou `$spa-support:spa-pessoa-por-id` seguido do ID do usuário. No Claude Code, substitua `$spa-support:` por `/spa-support:`.
 
 ### Movimentação e responsável original
 
@@ -132,7 +144,7 @@ A descoberta não testou salvamento nem profundidade da cópia nativa no SPA. A 
 plugins/spa-support/
   plugin.json                          # manifest portable/OpenAI
   .claude-plugin/plugin.json           # manifest Claude Code
-  skills/                              # nove skills compartilhadas pelos dois clientes
+  skills/                              # doze skills compartilhadas pelos dois clientes
 examples/support-demo/                 # servidor MCP fictício anterior, opcional
 tests/                                # validação do empacotamento público
 ```
