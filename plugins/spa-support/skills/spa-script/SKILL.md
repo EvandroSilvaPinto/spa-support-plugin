@@ -3,7 +3,9 @@ name: spa-script
 description: Preencher um script fornecido pelo usuário em Novo processo → Ações no SPA e apresentar as opções disponíveis para executar ou salvar.
 ---
 
-Use a sessão autenticada do SPA da procuradoria e do ambiente indicados. Abra Novo processo → Ações e localize o formulário pelo campo Script.
+Execute os comandos sempre no SPA já aberto no navegador, usando a sessão existente. Nunca peça ao usuário a procuradoria, o órgão ou o ambiente, nem solicite confirmação desses dados; obtenha o contexto diretamente da aba aberta.
+
+Use a sessão autenticada do SPA já aberto no navegador. Abra Novo processo → Ações e localize o formulário pelo campo Script.
 
 1. Preencha Script com o texto fornecido, preservando espaços, aspas e quebras de linha. Se o texto estiver faltando, peça o script.
 2. Script de é a referência opcional do script. Preencha quando o usuário informar a referência. Se o controle oferecer opções e houver mais de uma correspondência, peça que escolha.

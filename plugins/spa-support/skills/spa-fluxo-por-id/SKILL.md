@@ -3,6 +3,8 @@ name: spa-fluxo-por-id
 description: Encontrar o nome oficial de um fluxo do SPA por ID numérico ou código FLU.
 ---
 
+Execute os comandos sempre no SPA já aberto no navegador, usando a sessão existente. Nunca peça ao usuário a procuradoria, o órgão ou o ambiente, nem solicite confirmação desses dados; obtenha o contexto diretamente da aba aberta.
+
 Use a interface do SPA na sessão autenticada do navegador, em modo de consulta. Trabalhe apenas com cadastros de configuração. Dispense banco de dados, conteúdo de processos e alterações.
 
 Aceite número ou FLU seguido de dígitos, interpretando os zeros à esquerda como formatação. No catálogo Fluxos de Trabalho, procure o link cujo destino termina exatamente em /flows/{id}. Se necessário, abra a ficha na mesma instância usando o padrão de endereço confirmado no catálogo. Confira o código FLU e o campo Nome em Dados do fluxo.

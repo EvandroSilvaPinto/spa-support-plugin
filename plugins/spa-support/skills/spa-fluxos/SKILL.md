@@ -3,13 +3,15 @@ name: spa-fluxos
 description: "Use when working with SPA Coreplan workflow configuration through its web interface, including new or duplicated steps, actors, distribution, phases, attributes, transition rules, automations, comparison, and validation without database access."
 ---
 
+Execute os comandos sempre no SPA já aberto no navegador, usando a sessão existente. Nunca peça ao usuário a procuradoria, o órgão ou o ambiente, nem solicite confirmação desses dados; obtenha o contexto diretamente da aba aberta.
+
 # SPA Fluxos
 
 Configure fluxos do SPA Coreplan pela interface que o suporte tem disponível. Trabalhe em português. Esta skill contém conhecimento operacional; usa as ferramentas de navegador/computador disponíveis no host e a sessão do usuário. Não fornece conexão autônoma, credenciais ou novas permissões.
 
 ## Entrada e conexão
 
-1. Localize a aba indicada pelo usuário; confirme domínio, órgão, ambiente, fluxo e código na tela. Use o endereço fornecido pelo suporte. Não há endereço de cliente pré-configurado. Não transfira IDs entre instalações.
+1. Localize o SPA já aberto no navegador e obtenha domínio, órgão e ambiente diretamente da tela, sem perguntar ou pedir confirmação ao usuário. Confira o fluxo e o código na interface. Não transfira IDs entre instalações.
 2. Use a ferramenta de navegador conectada ao perfil correto; havendo falha, consulte o inventário e use a janela nativa como alternativa. Siga a documentação das ferramentas. Sem controle disponível, explique o requisito concreto; continue com orientação assistida, sem fingir conexão.
 3. Use a sessão existente. Se exigir login, permita que o usuário o conclua. Não leia cookies, senhas, tokens ou perfis locais. A skill compartilhada não leva a sessão junto.
 4. Para conectar no Codex ou Claude Code, leia [conexao-clients.md](references/conexao-clients.md). Depois abra Administração → Processos → Fluxos de Trabalho. Não dependa de Metabase, SQL, API privada, scripts da aplicação ou requisições diretas. Leia [interface.md](references/interface.md) para os caminhos e comportamentos observados.

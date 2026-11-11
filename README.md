@@ -1,8 +1,8 @@
 # SPA Support
 
-Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com **spa-fluxos** para configuração, **spa-script** para ações, **spa-relatorio** para relatórios e quatro skills para consultas por nome ou ID. Compatível com o empacotamento do Codex e do Claude Code.
+Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com nove skills para configuração de fluxos, consultas por nome ou ID, movimentação de processos, responsável original, scripts e relatórios. Compatível com o empacotamento do Codex e do Claude Code.
 
-Não exige banco, Metabase, chave de API nem servidor MCP próprio. O acesso ao SPA usa o navegador conectado ao assistente e a conta de cada suporte.
+Não exige banco, Metabase, chave de API nem servidor MCP próprio. Os comandos usam sempre o SPA já aberto no navegador e sua sessão existente. As skills obtêm procuradoria, órgão e ambiente diretamente da aba aberta, sem pedir esses dados ou sua confirmação ao usuário.
 
 ## Catálogo de skills
 
@@ -24,6 +24,13 @@ No Codex, digite `$spa-support:` seguido do nome da skill. No Claude Code, use `
 | Como se chama o passo com este ID ou código STP? | `spa-passo-por-id` |
 
 A resposta inclui o nome oficial, o ID e o link da ficha consultada. Quando vários nomes correspondem à busca, a skill apresenta as opções.
+
+### Movimentação e responsável original
+
+| Pedido | Skill |
+| --- | --- |
+| Mova estas procedures para outro responsável e/ou passo. | `spa-mover-processos` |
+| Prepare e salve o script de responsável original destas procedures. | `spa-responsavel-original` |
 
 ### Relatórios
 
@@ -125,7 +132,7 @@ A descoberta não testou salvamento nem profundidade da cópia nativa no SPA. A 
 plugins/spa-support/
   plugin.json                          # manifest portable/OpenAI
   .claude-plugin/plugin.json           # manifest Claude Code
-  skills/                              # sete skills compartilhadas pelos dois clientes
+  skills/                              # nove skills compartilhadas pelos dois clientes
 examples/support-demo/                 # servidor MCP fictício anterior, opcional
 tests/                                # validação do empacotamento público
 ```

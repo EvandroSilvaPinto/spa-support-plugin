@@ -3,6 +3,8 @@ name: spa-relatorio
 description: Gerar ou atualizar qualquer relatório solicitado ao SPA Support. O formato padrão é um arquivo HTML interativo, inclusive quando outra skill do plugin fornece os dados. Respeitar pedidos explícitos de outro formato.
 ---
 
+Execute os comandos sempre no SPA já aberto no navegador, usando a sessão existente. Nunca peça ao usuário a procuradoria, o órgão ou o ambiente, nem solicite confirmação desses dados; obtenha o contexto diretamente da aba aberta.
+
 # Relatórios do SPA
 
 Entregue o arquivo .html pronto para abrir no navegador e um link para ele. Aplique este padrão também a pedidos de atualização de um relatório anterior. Uma consulta pontual ou um pedido de IDs separados por vírgula pode ser respondido diretamente no formato solicitado.

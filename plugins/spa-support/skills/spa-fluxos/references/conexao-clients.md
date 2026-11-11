@@ -18,7 +18,7 @@ O suporte deve ter Claude Code, a extensão Claude in Chrome compatível, login 
 
 Descubra as ferramentas de navegador realmente fornecidas à sessão e siga suas descrições para inventariar contexto, navegar, ler, preencher e salvar. Não suponha que existam APIs `cua`, `sky` ou `tab.playwright` no Claude. Nunca tente executar essas chamadas em Bash ou instalar outro agente como alternativa.
 
-Use o endereço do SPA informado pelo suporte. A extensão pode abrir uma aba própria e reaproveitar o login do perfil; não prometa poder controlar qualquer aba pessoal existente. Se aparecer login ou CAPTCHA, entregue essa etapa ao usuário. Confirme órgão/ambiente antes de editar. Respeite as aprovações por site e ação.
+Use sempre o SPA já aberto no navegador e a sessão existente. Obtenha procuradoria, órgão e ambiente diretamente da aba aberta; nunca peça esses dados ou sua confirmação ao usuário. Se aparecer login ou CAPTCHA, entregue essa etapa ao usuário. Respeite as aprovações por site e ação.
 
 A invocação da skill como plugin é `/spa-support:spa-fluxos`. Se a sessão ainda não carregou o plugin, inicie outra após a instalação. Instalação e login do SPA são etapas separadas.
 
