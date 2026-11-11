@@ -4,11 +4,40 @@ Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do nav
 
 Não exige banco, Metabase, chave de API nem servidor MCP próprio. O acesso ao SPA usa o navegador conectado ao assistente e a conta de cada suporte.
 
+## Catálogo de skills
+
+No Codex, digite `$spa-support:` seguido do nome da skill. No Claude Code, use `/spa-support:` seguido do mesmo nome.
+
+### Configuração de fluxos
+
+| Pedido | Skill |
+| --- | --- |
+| Como está configurado este fluxo? Preciso revisar atores, regras ou adaptar um passo. | `spa-fluxos` |
+
+### Consultas por nome ou ID
+
+| Pedido | Skill |
+| --- | --- |
+| Qual é o ID do fluxo pelo nome? | `spa-fluxo-por-nome` |
+| Como se chama o fluxo com este ID ou código FLU? | `spa-fluxo-por-id` |
+| Qual é o ID deste passo dentro do meu fluxo? | `spa-passo-por-nome` |
+| Como se chama o passo com este ID ou código STP? | `spa-passo-por-id` |
+
+A resposta inclui o nome oficial, o ID e o link da ficha consultada. Quando vários nomes correspondem à busca, a skill apresenta as opções.
+
+### Scripts em Novo processo → Ações
+
+| Pedido | Skill |
+| --- | --- |
+| Preencha este script e mostre as opções para salvar ou executar. | `spa-script` |
+
+Veja o [passo a passo com um script de exemplo](#primeiro-uso-da-spa-script).
+
 ## Instalar pelo próprio chat
 
 Compartilhe este repositório e peça ao assistente:
 
-> Instale o plugin SPA Support de https://github.com/EvandroSilvaPinto/spa-support-plugin. Leia o README e os manifests, use a instalação nativa adequada ao cliente em que estamos e confira em uma nova sessão se spa-fluxos, spa-script e as quatro skills da tabela de consultas estão disponíveis. Não altere o SPA nem habilite permissões amplas. Se faltar acesso a terminal ou instalação de plugins, explique o passo manual necessário.
+> Instale o plugin SPA Support de https://github.com/EvandroSilvaPinto/spa-support-plugin. Leia o README e os manifests, use a instalação nativa adequada ao cliente em que estamos e confira em uma nova sessão se as skills do catálogo estão disponíveis. Não altere o SPA nem habilite permissões amplas. Se faltar acesso a terminal ou instalação de plugins, explique o passo manual necessário.
 
 Em clientes com terminal e instalação de plugins habilitados, o assistente pode executar os comandos abaixo. A instalação respeita as aprovações e políticas do cliente. Um link do GitHub, sozinho, não instala software em qualquer chat nem adiciona o plugin aos catálogos públicos dos fornecedores.
 
@@ -53,7 +82,7 @@ Use $spa-support:spa-fluxos para analisar o fluxo aberto no SPA. Primeiro expliq
 
 Em superfícies sem esses comandos, use o gerenciador de plugins/marketplaces oferecido pelo host. Não há promessa de instalação por URL no ChatGPT comum ou em uma superfície que não permita plugins de repositório. A distribuição usa os formatos oficiais de [plugins OpenAI](https://developers.openai.com/plugins/build/plugins) e [marketplaces Claude Code](https://code.claude.com/docs/en/plugin-marketplaces).
 
-## O que a skill cobre
+## O que a spa-fluxos cobre
 
 - Explicar, mapear, comparar e diagnosticar configurações de fluxos.
 - Preparar e aplicar criação/edição de passos e atributos pelas telas disponíveis.
@@ -118,19 +147,6 @@ codex plugin add spa-support@spa-support-marketplace
 Reabra a sessão após atualizar. Não é necessário alterar manualmente permissões, arquivos de login ou configurações globais para usar a skill.
 
 Licença [MIT](LICENSE). Projeto independente; não é um plugin oficial da Coreplan, OpenAI ou Anthropic.
-
-## Consultas por nome ou ID
-
-| Pedido | Skill |
-| --- | --- |
-| Qual é o ID do fluxo pelo nome? | `spa-fluxo-por-nome` |
-| Como se chama o fluxo com este ID ou código FLU? | `spa-fluxo-por-id` |
-| Qual é o ID deste passo dentro do meu fluxo? | `spa-passo-por-nome` |
-| Como se chama o passo com este ID ou código STP? | `spa-passo-por-id` |
-
-A resposta inclui o nome oficial, o ID e o link da ficha consultada. Quando vários nomes correspondem à busca, a skill apresenta as opções.
-
-No Codex, confira as seis skills no seletor de skills ($). No Claude Code, procure os comandos com o prefixo /spa-support:. Para testar uma consulta, use $spa-support:spa-fluxo-por-id no Codex ou /spa-support:spa-fluxo-por-id no Claude Code e informe um código FLU conhecido.
 
 ## Primeiro uso da spa-script
 
