@@ -1,6 +1,6 @@
 # SPA Support
 
-Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com **spa-fluxos** para configuração, **spa-script** para ações e quatro skills para consultas por nome ou ID. Compatível com o empacotamento do Codex e do Claude Code.
+Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com **spa-fluxos** para configuração, **spa-script** para ações, **spa-relatorio** para relatórios e quatro skills para consultas por nome ou ID. Compatível com o empacotamento do Codex e do Claude Code.
 
 Não exige banco, Metabase, chave de API nem servidor MCP próprio. O acesso ao SPA usa o navegador conectado ao assistente e a conta de cada suporte.
 
@@ -24,6 +24,14 @@ No Codex, digite `$spa-support:` seguido do nome da skill. No Claude Code, use `
 | Como se chama o passo com este ID ou código STP? | `spa-passo-por-id` |
 
 A resposta inclui o nome oficial, o ID e o link da ficha consultada. Quando vários nomes correspondem à busca, a skill apresenta as opções.
+
+### Relatórios
+
+Com uma consulta de processos aberta, experimente no Codex
+
+> `$spa-support:spa-relatorio` Use a consulta aberta no SPA e mantenha os filtros atuais. Gere um relatório dos processos por responsável, com o ID de cada processo, o passo atual e o link para a ficha.
+
+No Claude Code, use `/spa-support:spa-relatorio` com o mesmo pedido. O resultado padrão é um arquivo HTML que abre no navegador e permite filtrar por responsável e exportar as linhas visíveis em CSV.
 
 ### Scripts em Novo processo → Ações
 
@@ -113,7 +121,7 @@ A descoberta não testou salvamento nem profundidade da cópia nativa no SPA. A 
 plugins/spa-support/
   plugin.json                          # manifest portable/OpenAI
   .claude-plugin/plugin.json           # manifest Claude Code
-  skills/                              # seis skills compartilhadas pelos dois clientes
+  skills/                              # sete skills compartilhadas pelos dois clientes
 examples/support-demo/                 # servidor MCP fictício anterior, opcional
 tests/                                # validação do empacotamento público
 ```

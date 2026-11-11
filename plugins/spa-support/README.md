@@ -10,10 +10,18 @@ Os exemplos são fictícios. A profundidade da cópia nativa e os efeitos de sal
 
 Código, instalação e compatibilidade: [repositório SPA Support](https://github.com/EvandroSilvaPinto/spa-support-plugin).
 
-No Codex, confira as seis skills no seletor de skills ($). No Claude Code, procure os comandos com o prefixo /spa-support:. Para testar uma consulta, use $spa-support:spa-fluxo-por-id no Codex ou /spa-support:spa-fluxo-por-id no Claude Code e informe um código FLU conhecido.
+No Codex, confira as sete skills no seletor de skills ($). No Claude Code, procure os comandos com o prefixo /spa-support:. Para testar uma consulta, use $spa-support:spa-fluxo-por-id no Codex ou /spa-support:spa-fluxo-por-id no Claude Code e informe um código FLU conhecido.
 
 As consultas disponíveis são spa-fluxo-por-nome, spa-fluxo-por-id, spa-passo-por-nome e spa-passo-por-id.
 
 ## Scripts em Novo processo → Ações
 
 Use `$spa-support:spa-script` no Codex ou `/spa-support:spa-script` no Claude Code. Envie o texto do script e, se desejar, a referência em **Script de**, a data e a hora. Depois de preencher, o assistente apresenta as opções da tela para você escolher como concluir.
+
+## Relatórios
+
+No Codex, use `$spa-support:spa-relatorio`. No Claude Code, use `/spa-support:spa-relatorio`. Exemplo de pedido
+
+> Use a consulta aberta no SPA e mantenha os filtros atuais. Gere um relatório dos processos por responsável, com o ID de cada processo, o passo atual e o link para a ficha.
+
+Abra o HTML entregue para pesquisar processos, filtrar por responsável e exportar os resultados visíveis em CSV.
