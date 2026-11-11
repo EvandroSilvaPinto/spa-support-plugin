@@ -27,7 +27,11 @@ A resposta inclui o nome oficial, o ID e o link da ficha consultada. Quando vár
 
 ### Relatórios
 
-Com uma consulta de processos aberta, experimente no Codex
+| Pedido | Skill |
+| --- | --- |
+| Gere ou atualize um relatório do SPA usando os filtros da consulta. | `spa-relatorio` |
+
+Exemplo no Codex com uma consulta de processos aberta
 
 > `$spa-support:spa-relatorio` Use a consulta aberta no SPA e mantenha os filtros atuais. Gere um relatório dos processos por responsável, com o ID de cada processo, o passo atual e o link para a ficha.
 
