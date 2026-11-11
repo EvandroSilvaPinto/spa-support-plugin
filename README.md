@@ -132,6 +132,20 @@ A resposta inclui o nome oficial, o ID e o link da ficha consultada. Quando vár
 
 No Codex, confira as seis skills no seletor de skills ($). No Claude Code, procure os comandos com o prefixo /spa-support:. Para testar uma consulta, use $spa-support:spa-fluxo-por-id no Codex ou /spa-support:spa-fluxo-por-id no Claude Code e informe um código FLU conhecido.
 
-## Scripts em Novo processo → Ações
+## Primeiro uso da spa-script
 
-Use `$spa-support:spa-script` no Codex ou `/spa-support:spa-script` no Claude Code. Envie o texto do script e, se desejar, a referência em **Script de**, a data e a hora. Depois de preencher, o assistente apresenta as opções da tela para você escolher como concluir.
+1. Após instalar ou atualizar o plugin, inicie uma nova sessão do assistente. Abra o SPA da procuradoria no navegador conectado e confira o ambiente e a conta.
+2. No Codex, copie o pedido abaixo. No Claude Code, troque a primeira linha por `/spa-support:spa-script`.
+
+   ~~~text
+   $spa-support:spa-script
+   Abra Novo processo → Ações no SPA.
+   No campo “Script de”, use a referência “Primeiro teste da equipe”.
+   Deixe a data e a hora em branco.
+   Preencha o campo “Script” com esta expressão:
+   2 + 3
+   Mostre as opções disponíveis para salvar ou executar e aguarde minha escolha.
+   ~~~
+
+3. Confira se o campo **Script** contém apenas `2 + 3`. A expressão serve para experimentar o preenchimento sem depender de IDs ou cadastros da procuradoria. **Script de**, data e hora são opcionais. Para usar um script da equipe, substitua a expressão pelo texto completo, mantendo as quebras de linha.
+4. Leia a lista de opções que o assistente encontrou na tela. Para concluir, responda com o rótulo da opção desejada. Para testar apenas o preenchimento, responda “Pare aqui”. Se escolher salvar ou executar, confira a mensagem que o SPA apresentar.
