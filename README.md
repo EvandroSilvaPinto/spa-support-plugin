@@ -184,3 +184,7 @@ Licença [MIT](LICENSE). Projeto independente; não é um plugin oficial da Core
 
 3. Confira se o campo **Script** contém apenas `2 + 3`. A expressão serve para experimentar o preenchimento sem depender de IDs ou cadastros da procuradoria. **Script de**, data e hora são opcionais. Para usar um script da equipe, substitua a expressão pelo texto completo, mantendo as quebras de linha.
 4. Leia a lista de opções que o assistente encontrou na tela. Para concluir, responda com o rótulo da opção desejada. Para testar apenas o preenchimento, responda “Pare aqui”. Se escolher salvar ou executar, confira a mensagem que o SPA apresentar.
+
+## Regra de manutenção
+
+Toda alteração neste repositório deve incluir uma atualização deste README no mesmo commit. Mantenha o catálogo de skills, as instruções, os exemplos e a versão coerentes com as alterações aplicáveis. A regra também está registrada em [AGENTS.md](AGENTS.md).
