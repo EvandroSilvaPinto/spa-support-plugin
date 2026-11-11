@@ -1,8 +1,14 @@
 # SPA Support
 
-Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com doze skills para configuração de fluxos, consultas por nome ou ID, movimentação de processos, responsável original, scripts e relatórios. Compatível com o empacotamento do Codex e do Claude Code.
+Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com treze skills para configuração de fluxos, consultas por nome ou ID, movimentação de processos, responsável original, scripts e relatórios. Compatível com o empacotamento do Codex e do Claude Code.
 
 Não exige banco, Metabase, chave de API nem servidor MCP próprio. Os comandos usam sempre o SPA já aberto no navegador e sua sessão existente. As skills obtêm procuradoria, órgão e ambiente diretamente da aba aberta, sem pedir que o usuário forneça esses dados.
+
+## Sessão e acesso à mesa — versão 0.6.3
+
+Antes de cada consulta ou ação, as skills conferem e informam **usuário conectado** e **mesa em uso**. O perfil conectado é distinguido da mesa consultada; quando a página não exibe uma mesa, isso é indicado. Após uma troca, o novo contexto é confirmado e incluído no resultado.
+
+A nova skill `spa-mesa-de` abre `/do_you_know_the_way` no domínio da sessão atual, pesquisa a pessoa no campo **The way**, solicita a escolha quando houver homônimos e usa **Gimme the way** para entrar. O acesso é conferido pelo perfil completo e pela mesa aberta.
 
 ## Consultas e confirmação — versão 0.6.2
 
@@ -11,6 +17,14 @@ Consultas, buscas, diagnóstico, comparações e relatórios em modo de leitura 
 ## Catálogo de skills
 
 No Codex, digite `$spa-support:` seguido do nome da skill. No Claude Code, use `/spa-support:` seguido do mesmo nome.
+
+### Acesso à mesa de trabalho
+
+| Pedido | Skill |
+| --- | --- |
+| Entre como esta pessoa e abra sua mesa no SPA. | `spa-mesa-de` |
+
+Exemplo: `$spa-support:spa-mesa-de` seguido do nome da pessoa. A skill usa a sessão existente e pede distinção se mais de um usuário corresponder.
 
 ### Configuração de fluxos
 
