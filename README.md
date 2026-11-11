@@ -2,7 +2,11 @@
 
 Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com doze skills para configuração de fluxos, consultas por nome ou ID, movimentação de processos, responsável original, scripts e relatórios. Compatível com o empacotamento do Codex e do Claude Code.
 
-Não exige banco, Metabase, chave de API nem servidor MCP próprio. Os comandos usam sempre o SPA já aberto no navegador e sua sessão existente. As skills obtêm procuradoria, órgão e ambiente diretamente da aba aberta, sem pedir esses dados ou sua confirmação ao usuário.
+Não exige banco, Metabase, chave de API nem servidor MCP próprio. Os comandos usam sempre o SPA já aberto no navegador e sua sessão existente. As skills obtêm procuradoria, órgão e ambiente diretamente da aba aberta, sem pedir que o usuário forneça esses dados.
+
+## Conferência obrigatória — versão 0.6.1
+
+Todas as doze skills apresentam a ação, o contexto observado, os critérios, os identificadores e os efeitos para conferência, e aguardam confirmação explícita antes de executar a demanda no SPA. Isso inclui consultas, relatórios, preenchimento, salvamento, movimentação e scripts. A leitura mínima para preparar a conferência é permitida; a execução começa após a confirmação. Se o escopo mudar, uma nova conferência é apresentada. Uma confirmação cobre as etapas e skills auxiliares já descritas, sem repeti-la por clique.
 
 ## Catálogo de skills
 

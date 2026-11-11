@@ -29,3 +29,7 @@ Abra o HTML entregue para pesquisar processos, filtrar por responsável e export
 ## Consultas de pessoas — versão 0.6.0
 
 Use `spa-pessoa-por-nome` pelo nome, `spa-pessoa-por-people` pelo People (ID da pessoa) ou `spa-pessoa-por-id` pelo ID do usuário. As três retornam nome, People, ID do usuário vinculado e link da ficha verificada. Os dois identificadores são confirmados separadamente; valores indisponíveis são indicados como não confirmados.
+
+## Conferência obrigatória — versão 0.6.1
+
+Todas as skills aguardam confirmação explícita após apresentar a conferência da demanda, inclusive para consultas, relatórios, preenchimento e alterações no SPA. Mudanças no escopo exigem nova conferência e confirmação.

@@ -3,7 +3,20 @@ name: spa-fluxos
 description: "Use when working with SPA Coreplan workflow configuration through its web interface, including new or duplicated steps, actors, distribution, phases, attributes, transition rules, automations, comparison, and validation without database access."
 ---
 
-Execute os comandos sempre no SPA já aberto no navegador, usando a sessão existente. Nunca peça ao usuário a procuradoria, o órgão ou o ambiente, nem solicite confirmação desses dados; obtenha o contexto diretamente da aba aberta.
+## Conferência e confirmação antes da execução
+
+Antes de executar qualquer demanda no SPA, inclusive consultas, relatórios, preenchimento de formulários e alterações, prepare uma conferência e aguarde confirmação explícita do usuário. O pedido inicial descreve a demanda; a confirmação deve ocorrer depois da apresentação dessa conferência.
+
+Para preparar a conferência, leia apenas o contexto já aberto e navegue em modo de leitura no mínimo necessário para identificar alvos e valores atuais. Não execute a consulta solicitada, preencha formulários, salve, mova, crie, duplique ou acione scripts antes da confirmação. Obtenha órgão e ambiente da sessão existente, sem exigir que o usuário os forneça.
+
+Apresente: ação e resultado esperado; ambiente observado; nomes, códigos e IDs disponíveis; filtros, lote e quantidade quando aplicáveis; origem e destino; valores atuais → propostos para alterações; campos opcionais e opções de conclusão; efeitos conhecidos e dados ainda não confirmados. Para pessoas, diferencie People (ID da pessoa) de ID do usuário. Em consultas cujo resultado ainda é desconhecido, confira o critério recebido e deixe claro o que será pesquisado, sem inventar resultados.
+
+Peça: “Confirma a execução conforme esta conferência?” e pare antes da execução até receber uma resposta inequívoca. Uma confirmação cobre o escopo apresentado, inclusive as etapas das skills auxiliares descritas nele; não peça novamente por cada clique. Se o escopo, os identificadores, os destinos ou os efeitos mudarem, apresente a conferência revisada e obtenha nova confirmação antes de prosseguir. Para alterações, se a consulta aprovada revelar dados necessários à decisão que não constavam da conferência, apresente-os e confirme a alteração concreta antes de persistir.
+
+Depois da confirmação, execute somente o escopo conferido e verifique o resultado. Em falha ou resultado incerto, consulte o estado antes de repetir para evitar duplicidade. Esta regra prevalece sobre orientações operacionais de execução imediata ou autorização pelo pedido inicial presentes nas referências.
+
+
+Execute os comandos sempre no SPA já aberto no navegador, usando a sessão existente. Obtenha procuradoria, órgão e ambiente diretamente da aba aberta e inclua o contexto observado na conferência da demanda.
 
 # SPA Fluxos
 
@@ -11,7 +24,7 @@ Configure fluxos do SPA Coreplan pela interface que o suporte tem disponível. T
 
 ## Entrada e conexão
 
-1. Localize o SPA já aberto no navegador e obtenha domínio, órgão e ambiente diretamente da tela, sem perguntar ou pedir confirmação ao usuário. Confira o fluxo e o código na interface. Não transfira IDs entre instalações.
+1. Localize o SPA já aberto no navegador e obtenha domínio, órgão e ambiente diretamente da tela, sem pedir que o usuário forneça esses dados. Confira o fluxo e o código na interface. Não transfira IDs entre instalações.
 2. Use a ferramenta de navegador conectada ao perfil correto; havendo falha, consulte o inventário e use a janela nativa como alternativa. Siga a documentação das ferramentas. Sem controle disponível, explique o requisito concreto; continue com orientação assistida, sem fingir conexão.
 3. Use a sessão existente. Se exigir login, permita que o usuário o conclua. Não leia cookies, senhas, tokens ou perfis locais. A skill compartilhada não leva a sessão junto.
 4. Para conectar no Codex ou Claude Code, leia [conexao-clients.md](references/conexao-clients.md). Depois abra Administração → Processos → Fluxos de Trabalho. Não dependa de Metabase, SQL, API privada, scripts da aplicação ou requisições diretas. Leia [interface.md](references/interface.md) para os caminhos e comportamentos observados.
@@ -30,7 +43,7 @@ Configure fluxos do SPA Coreplan pela interface que o suporte tem disponível. T
 ## Contrato de trabalho
 
 - Determine origem, destino, resultado desejado e limites da alteração. Leia o estado atual antes de formular uma proposta. Faça perguntas apenas quando uma decisão necessária não puder ser resolvida pelas telas ou pelo pedido.
-- Registre um plano concreto: alvo/código, antes → depois, atores executores, destinatários, condições, fases e dependências. Se o pedido já autoriza a alteração concreta, execute pela interface sem reconfirmar por rotina. Um pedido de criar esta skill não autoriza modificar fluxos reais como teste.
+- Registre um plano concreto: alvo/código, antes → depois, atores executores, destinatários, condições, fases e dependências. Execute pela interface somente após a confirmação da conferência concreta. Um pedido de criar esta skill não autoriza modificar fluxos reais como teste.
 - Mudanças de acesso sensível, exclusão definitiva e demais ações sujeitas à confirmação seguem a política do host no momento da ação. Prepare primeiro o resultado revisável. Não amplie acesso de atores para contornar uma falha de roteamento.
 - **O modelador visual persiste criar, conectar, renomear, mover e excluir no fluxo real.** Não explore arrastando tarefas, criando conexões ou usando Ctrl+Z. Prefira formulários para alterações precisas. Não suponha que existe rascunho.
 - Altere somente o solicitado. Configurar um passo e executá-lo num processo são ações distintas. Não execute passos, peticionamentos, gatilhos ou rotinas em massa para testar configuração sem pedido específico. Não leia conteúdos de processos.

@@ -21,7 +21,7 @@ Ordem preferida, adaptável ao comportamento real da versão:
 5. Configurar destinatários, transições e regras, além de falha e retorno. Conectar entrada torna o passo alcançável; altere passos anteriores somente se isso estiver no pedido.
 6. Conferir casos positivos/negativos/vazios e persistência. Ativar/publicar somente conforme o resultado autorizado; não faça teste funcional em processo por conta própria.
 
-Se o usuário já autorizou a criação/edição concreta, não encerre com uma proposta quando pode concluir a configuração autorizada. Se faltam dados ou permissões, entregue a parte pronta e a decisão exata que falta.
+Apresente a conferência da criação/edição concreta e aguarde confirmação explícita conforme SKILL.md. Após a confirmação, conclua somente o escopo conferido. Se faltam dados ou permissões, entregue a parte pronta e a decisão exata que falta.
 
 ## Duplicar passo
 

@@ -24,7 +24,7 @@ test('both marketplaces resolve to the same plugin with matching identities', as
   const portable = await json('plugins/spa-support/plugin.json');
   const claude = await json('plugins/spa-support/.claude-plugin/plugin.json');
   assert.equal(portable.name, 'spa-support');
-  assert.equal(portable.version, '0.6.0');
+  assert.equal(portable.version, '0.6.1');
   assert.equal(claude.name, portable.name);
   assert.equal(claude.version, portable.version);
   const codexMarket = await json('.agents/plugins/marketplace.json');
