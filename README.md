@@ -4,9 +4,9 @@ Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do nav
 
 Não exige banco, Metabase, chave de API nem servidor MCP próprio. Os comandos usam sempre o SPA já aberto no navegador e sua sessão existente. As skills obtêm procuradoria, órgão e ambiente diretamente da aba aberta, sem pedir que o usuário forneça esses dados.
 
-## Conferência obrigatória — versão 0.6.1
+## Consultas e confirmação — versão 0.6.2
 
-Todas as doze skills apresentam a ação, o contexto observado, os critérios, os identificadores e os efeitos para conferência, e aguardam confirmação explícita antes de executar a demanda no SPA. Isso inclui consultas, relatórios, preenchimento, salvamento, movimentação e scripts. A leitura mínima para preparar a conferência é permitida; a execução começa após a confirmação. Se o escopo mudar, uma nova conferência é apresentada. Uma confirmação cobre as etapas e skills auxiliares já descritas, sem repeti-la por clique.
+Consultas, buscas, diagnóstico, comparações e relatórios em modo de leitura são executados diretamente, sem confirmação. Filtros de pesquisa, paginação e abertura de fichas fazem parte da consulta. Alterações, preenchimento de formulários de alteração, salvamento, movimentações e scripts exigem conferência dos dados e confirmação explícita antes da execução. A leitura necessária para preparar essa conferência também dispensa confirmação. Se o escopo aprovado mudar, uma nova conferência é apresentada.
 
 ## Catálogo de skills
 
