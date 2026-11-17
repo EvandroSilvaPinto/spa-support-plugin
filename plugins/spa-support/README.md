@@ -10,7 +10,7 @@ Os exemplos são fictícios. A profundidade da cópia nativa e os efeitos de sal
 
 Código, instalação e compatibilidade: [repositório SPA Support](https://github.com/EvandroSilvaPinto/spa-support-plugin).
 
-No Codex, confira as treze skills no seletor de skills ($). No Claude Code, procure os comandos com o prefixo /spa-support:. Para testar uma consulta, use $spa-support:spa-fluxo-por-id no Codex ou /spa-support:spa-fluxo-por-id no Claude Code e informe um código FLU conhecido.
+No Codex, confira as quatorze skills no seletor de skills ($). No Claude Code, procure os comandos com o prefixo /spa-support:. Para testar uma consulta, use $spa-support:spa-fluxo-por-id no Codex ou /spa-support:spa-fluxo-por-id no Claude Code e informe um código FLU conhecido.
 
 As consultas disponíveis são spa-fluxo-por-nome, spa-fluxo-por-id, spa-passo-por-nome e spa-passo-por-id.
 
@@ -39,3 +39,9 @@ Consultas e relatórios em modo de leitura dispensam confirmação, incluindo fi
 Todas as skills informam o usuário conectado e a mesa em uso antes de consultas ou ações e no resultado. A skill `spa-mesa-de` permite entrar como a pessoa solicitada pelo campo The way na sessão atual, com escolha em caso de homônimos e verificação do novo perfil e da mesa.
 
 Use `$spa-support:spa-mesa-de` no Codex ou `/spa-support:spa-mesa-de` no Claude Code, seguido do nome.
+
+## Levantamento de evidência e documento de manutenção
+
+A skill `spa-levantamento-evidencia` confirma na tela do SPA um comportamento indevido, reúne números e valores reais e preenche uma cópia do modelo "Especificação de manutenção" no Google Docs para o dev. Quando o caso puder ter erro em log, consulta o Errbit (https://errbit.coreplan.com.br/) em modo de leitura e registra a URL do erro, ou "Não há". Antes de criar o documento, apresenta o rascunho para confirmação.
+
+Use `$spa-support:spa-levantamento-evidencia` no Codex ou `/spa-support:spa-levantamento-evidencia` no Claude Code, descrevendo o comportamento observado.

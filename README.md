@@ -1,8 +1,14 @@
 # SPA Support
 
-Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com treze skills para configuração de fluxos, consultas por nome ou ID, movimentação de processos, responsável original, scripts e relatórios. Compatível com o empacotamento do Codex e do Claude Code.
+Plugin de suporte para configurar fluxos do **SPA Coreplan pela interface do navegador**, com quatorze skills para configuração de fluxos, consultas por nome ou ID, movimentação de processos, responsável original, scripts e relatórios e levantamento de evidências para demandas de manutenção. Compatível com o empacotamento do Codex e do Claude Code.
 
 Não exige banco, Metabase, chave de API nem servidor MCP próprio. Os comandos usam sempre o SPA já aberto no navegador e sua sessão existente. As skills obtêm procuradoria, órgão e ambiente diretamente da aba aberta, sem pedir que o usuário forneça esses dados.
+
+## Levantamento de evidência — versão 0.7.0
+
+A nova skill `spa-levantamento-evidencia` confirma na tela do SPA um comportamento indevido, reúne números e valores reais e preenche uma cópia do modelo "Especificação de manutenção" no Google Docs para o dev. Quando o caso puder ter erro em log, consulta o Errbit (https://errbit.coreplan.com.br/) em modo de leitura e registra a URL do erro ou "Não há". O rascunho é apresentado para confirmação antes de criar o documento.
+
+Exemplo: `$spa-support:spa-levantamento-evidencia` no Codex ou `/spa-support:spa-levantamento-evidencia` no Claude Code, descrevendo o comportamento observado.
 
 ## Sessão e acesso à mesa — versão 0.6.3
 
@@ -25,6 +31,12 @@ No Codex, digite `$spa-support:` seguido do nome da skill. No Claude Code, use `
 | Entre como esta pessoa e abra sua mesa no SPA. | `spa-mesa-de` |
 
 Exemplo: `$spa-support:spa-mesa-de` seguido do nome da pessoa. A skill usa a sessão existente e pede distinção se mais de um usuário corresponder.
+
+### Levantamento de evidência
+
+| Pedido | Skill |
+| --- | --- |
+| Confira este defeito na tela, verifique o Errbit e monte o documento de manutenção para o dev. | `spa-levantamento-evidencia` |
 
 ### Configuração de fluxos
 
