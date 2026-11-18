@@ -84,7 +84,7 @@ Exemplo no Codex com uma consulta de processos aberta
 
 > `$spa-support:spa-relatorio` Use a consulta aberta no SPA e mantenha os filtros atuais. Gere um relatório dos processos por responsável, com o ID de cada processo, o passo atual e o link para a ficha.
 
-No Claude Code, use `/spa-support:spa-relatorio` com o mesmo pedido. O resultado padrão é um arquivo HTML que abre no navegador e permite filtrar por responsável e exportar as linhas visíveis em CSV.
+No Claude Code, use `/spa-support:spa-relatorio` com o mesmo pedido. O resultado padrão é um arquivo HTML que abre no navegador e permite filtrar por responsável e exportar as linhas visíveis em CSV. O arquivo é único, segue a identidade visual do SPA e tem o botão Atualizar, que mantém busca, filtros e ordenação ao recarregar os dados.
 
 ### Scripts em Novo processo → Ações
 

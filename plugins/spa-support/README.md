@@ -24,7 +24,7 @@ No Codex, use `$spa-support:spa-relatorio`. No Claude Code, use `/spa-support:sp
 
 > Use a consulta aberta no SPA e mantenha os filtros atuais. Gere um relatório dos processos por responsável, com o ID de cada processo, o passo atual e o link para a ficha.
 
-Abra o HTML entregue para pesquisar processos, filtrar por responsável e exportar os resultados visíveis em CSV.
+Abra o HTML entregue para pesquisar processos, filtrar por responsável e exportar os resultados visíveis em CSV. O relatório usa a identidade visual do SPA, é um único arquivo com os dados embutidos e tem o botão Atualizar, que recarrega o arquivo regravado pelo Claude mantendo busca, filtros e ordenação.
 
 ## Consultas de pessoas — versão 0.6.0
 

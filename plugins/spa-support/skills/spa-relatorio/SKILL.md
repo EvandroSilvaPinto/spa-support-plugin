@@ -39,4 +39,27 @@ Use a consulta ou a skill do SPA adequada ao assunto. Preserve os filtros do ped
 - Para tabelas, inclua busca, ordenação por coluna, contagem de resultados visíveis e filtros pelos campos relevantes, como responsável ou fluxo. Em relatórios descritivos, organize os assuntos em seções expansíveis com busca.
 - Para processos, mostre o ID da procedure com link para a ficha no ambiente consultado. Preserve identificadores como texto e ordene datas e quantidades pelos seus valores.
 - Em relatórios tabulares, permita exportar a seleção filtrada em CSV. Ofereça uma versão de impressão legível. Indique quando a consulta está vazia e quando os filtros locais ocultam todos os resultados.
-- Antes da entrega, abra o arquivo, confira totais e links e teste busca, filtros e ordenação com os dados disponíveis. Ao atualizar, substitua também contagens, critérios e datas apresentados no HTML.
+- Aplique a identidade visual do SPA (abaixo) e o botão Atualizar com persistência de filtros (abaixo).
+- Antes da entrega, abra o arquivo, confira totais e links e teste busca, filtros e ordenação com os dados disponíveis. Teste também o botão Atualizar: aplique busca, filtros e ordenação, atualize e confirme que continuam aplicados. Ao atualizar, substitua também contagens, critérios e datas apresentados no HTML.
+
+## Identidade visual do SPA
+
+Medida no SPA (spa.pge.mt.gov.br). Defina como variáveis em `:root` e use em todo o HTML.
+
+- Fonte: `Roboto, sans-serif`, corpo 13,5px. Não carregue fonte externa; a pilha cai para sans-serif se Roboto não existir.
+- Fundo da página `#f4f7fb`; cartões brancos com cantos arredondados e sombra suave; texto secundário `#747a80`; texto de campos `#30425e`.
+- Cabeçalho e faixa de título: `linear-gradient(110deg, #0e3263 0%, #1456a0 58%, #1776d2 100%)`, texto branco.
+- Cabeçalho do relatório: marca textual **SPA** em negrito seguida de uma etiqueta arredondada com o órgão (ex.: **PGE-MT**, obtido da sessão), depois o título do relatório e, abaixo, fonte, momento de referência e quantidade de registros. Não use imagem de logo.
+- Primário/foco/link/página ativa `#1769e0`, com anel de foco `rgba(23,105,224,.2)`; botão secundário fundo `#eef2f7`, texto `#59677c`, hover `#dfe6ef`; borda de botão outline `#aeb9c8`; raio dos botões 9px.
+- Campos: fundo `#f8faff`, borda `#dce3ec`, foco `#77aaf0`, placeholder `#8793a7`.
+- Destaques semânticos dos indicadores: âmbar (a vencer), roxo (próximos dias), vermelho (vencidos), verde (informativo), cada um em ícone/fundo claro.
+- Suporte a tema escuro com `prefers-color-scheme`, mantendo o gradiente do cabeçalho, e layout legível em celular. Na impressão, remova o gradiente e use fundo branco.
+
+## Botão Atualizar sem perder filtros
+
+- Entregue **um único arquivo .html**: os dados ficam embutidos em `<script id="dados" type="application/json">` (fonte, órgão, ambiente, momento de referência e registros), lidos com `JSON.parse`. Escape `</` como `<\/` dentro do JSON. Não crie arquivo de dados separado nem use `fetch`, que o Chrome bloqueia em `file://`.
+- O botão **Atualizar** (ícone de recarregar) grava o estado e a data/quantidade da coleta atual, e recarrega a página com `location.reload()`. Ao reabrir, restaura o estado e informa "Dados atualizados." ou "Sem alterações desde {data}." conforme a coleta mudou ou não. Exibe a data/hora da coleta junto ao botão.
+- Mantenha o estado de busca, filtros, ordenação, página e seções abertas em um objeto único, gravado em `localStorage` (chave com o nome do relatório) dentro de `try/catch`, e também no hash da URL como reserva. Ao abrir ou atualizar, restaure esse estado; valores de filtro que não existam mais nos dados novos são descartados e o aviso "filtro removido: X" é exibido.
+- Inclua também um botão **Limpar filtros**, separado do Atualizar.
+- O botão não consulta o SPA. Para dados novos, o Claude refaz a coleta e **regrava o bloco de dados do mesmo .html** (mantendo o nome do arquivo); o usuário então clica em Atualizar na aba já aberta. Informe isso no rodapé do relatório.
+- Teste na entrega: aplique filtros, altere a coleta no arquivo, clique em Atualizar e confirme dados novos com filtros mantidos.
