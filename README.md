@@ -94,6 +94,8 @@ No Claude Code, use `/spa-support:spa-relatorio` com o mesmo pedido. O resultado
 
 Veja o [passo a passo com um script de exemplo](#primeiro-uso-da-spa-script).
 
+Para mudar um ou mais processos de **Em andamento** para **Armazenado**, a skill oferece um modelo SQL para o banco e um modelo Ruby para **Novo processo → Ações**. Informe os IDs internos e o canal desejado. Ambos conferem o lote antes de gravar o status e não registram uma movimentação no histórico.
+
 ## Instalar pelo próprio chat
 
 Compartilhe este repositório e peça ao assistente:

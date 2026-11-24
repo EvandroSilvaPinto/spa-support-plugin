@@ -1,6 +1,6 @@
 ---
 name: spa-script
-description: Preencher um script fornecido pelo usuário em Novo processo → Ações no SPA e apresentar as opções disponíveis para executar ou salvar.
+description: Use para preparar scripts em Novo processo → Ações no SPA, ou alterar o status de processos de Em andamento para Armazenado via Ruby ou SQL.
 ---
 
 ## Identificação da sessão e da mesa
@@ -32,3 +32,68 @@ Use a sessão autenticada do SPA já aberto no navegador. Abra Novo processo →
 3. A data e a hora do script também são opcionais. Preencha os valores informados conforme o formato exibido na tela. Quando o usuário omitir um campo opcional, preserve o estado do formulário e indique qualquer valor já preenchido na revisão.
 4. Antes de concluir, confira o texto no editor e apresente a referência, a data e a hora como aparecem na tela. Liste todas as opções de conclusão exibidas nessa instalação, incluindo as de menus associados aos botões. Use os rótulos reais e indique quais estão desabilitadas. Abra menus de opções apenas pelo controle de expansão.
 5. Aguarde a escolha do usuário e acione somente a opção escolhida. Relate a confirmação ou o erro exibido pelo SPA. Se a resposta for interrompida, confira o estado da ação antes de repetir, para evitar execução duplicada.
+
+## Alterar status de Em andamento para Armazenado
+
+Para um ou vários processos, use os IDs internos de `Procedure`. Siga o canal indicado pelo usuário. Se ele não indicar um canal, apresente as duas opções na conferência. A opção SQL é para uma conexão autorizada com o banco do ambiente alvo. A opção Ruby é para o campo **Script** em **Novo processo → Ações**.
+
+Substitua os IDs de exemplo em uma única linha. Os dois modelos calculam a quantidade a partir dos IDs informados e exigem que todos os registros estejam em **Em andamento (`0`)**. A gravação direta altera apenas `status` para **Armazenado (`2`)** e não cria movimentação no histórico. Para executar, aplique a conferência desta skill. Após a execução, consulte os mesmos IDs e confirme o status gravado.
+
+### SQL no banco
+
+```sql
+WITH entrada AS (
+    SELECT ARRAY[123, 456]::bigint[] AS ids
+),
+lote AS MATERIALIZED (
+    SELECT p.id, p.status
+    FROM public.procedures p
+    CROSS JOIN entrada e
+    WHERE p.id = ANY(e.ids)
+    ORDER BY p.id
+    FOR UPDATE OF p
+),
+alterados AS (
+    UPDATE public.procedures p
+    SET status = 2
+    FROM lote l
+    CROSS JOIN entrada e
+    WHERE p.id = l.id
+      AND p.status = 0
+      AND (
+          SELECT count(*) = cardinality(e.ids) AND bool_and(status = 0)
+          FROM lote
+      )
+    RETURNING p.id, p.status
+)
+SELECT id, status
+FROM alterados
+ORDER BY id;
+```
+
+O SQL retorna zero linhas se houver ID ausente, duplicado ou com outro status.
+
+### Ruby em Novo processo → Ações
+
+```ruby
+ids = [123, 456].uniq
+
+raise "Informe pelo menos um ID de processo." if ids.empty?
+
+Procedure.transaction do
+  em_andamento = Procedure.where(id: ids).where("procedures.status = 0")
+  ids_encontrados = em_andamento.order(:id).lock.pluck(:id)
+  ids_invalidos = ids - ids_encontrados
+
+  if ids_invalidos.any?
+    raise "Processos ausentes ou fora de Em andamento: #{ids_invalidos.join(', ')}"
+  end
+
+  total = em_andamento.update_all("status = 2")
+  raise "Esperado: #{ids.length}. Atualizados: #{total}." unless total == ids.length
+
+  "Processos armazenados: #{ids_encontrados.join(', ')}"
+end
+```
+
+O Ruby remove IDs duplicados e interrompe a transação se algum ID estiver ausente ou com outro status.
